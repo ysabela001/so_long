@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   read_and_structure.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytavares <ytavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 17:10:01 by ytavares          #+#    #+#             */
-/*   Updated: 2024/12/09 19:25:50 by ytavares         ###   ########.fr       */
+/*   Created: 2024/12/02 15:21:14 by ytavares          #+#    #+#             */
+/*   Updated: 2024/12/03 11:57:53 by ytavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+//leitura do arquivo .ber e o armazenamento do mapa em uma estrutura
 
-# include "the_map.h"
-# include "error.h"
-# include "graphic_manipulation.h"
+t_map **read_and_storematriz_map(const char *path_to_map_file)
+{
+	t_map *map = malloc(sizeof(map))
 
-# endif
+
+
+	
+}
