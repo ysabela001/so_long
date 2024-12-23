@@ -6,7 +6,7 @@
 /*   By: ytavares <ytavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 13:49:27 by ytavares          #+#    #+#             */
-/*   Updated: 2024/12/09 18:57:14 by ytavares         ###   ########.fr       */
+/*   Updated: 2024/12/20 15:35:19 by ytavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,45 @@
 
 #include "so_long.h"
 
-//path_to_map_file = caminho para o arquivo do mapa (.ber)
-//Ele é utilizado para abrir e ler o arquivo contendo os dados do mapa.
-
-//fd = usado para manipular o arquivo .ber
-//store_line = armazena cada linha do arquivo
-//**map = representa a array do mapa 
-
 char	**read_and_storematriz_map(const char *path_to_map_file)
 {
 	int		fd;
-	char	*store_line;
 	char	**map;
 	int		i;
-	
+
 	i = 0;
 	fd = open(path_to_map_file, O_RDONLY);
 	if (fd < 0)
-		error_exit("[ERR0R] IS NOT POSSIBLE TO OPEN THE MAP FILE\n");
+		return (ft_putstr_fd("[ERR0R] CANNOT OPEN THE MAP FILE\n", 2), NULL);
 	map = malloc(sizeof(char *) * MAX_MAP_HEIGHT);
 	if (!map)
-		error_exit("[ERROR] FAILED ON MEMORY\n");
-	while ((store_line = get_next_line(fd)) != NULL)
-	{
-		map[i] = store_line;
-		i++;
-	}
-	map[i] = NULL;
+		return (ft_putstr_fd("[ERROR] FAILED ON MEMORY\n", 2), NULL);
+	read_lines_into_map(fd, map);
 	close(fd);
-	if (i == 0)	
-		error("[ERR0R] THIS FILE IS EMPTY\n");
+	if (map[0] == NULL)
+	{
+		free(map);
+		return (ft_putstr_fd("[ERR0R] THIS FILE IS EMPTY\n", 2), NULL);
+	}
 	return (map);
 }
 
-// if (i >= MAX_MAP_HEIGHT)
-//   error_exit("[ERR0R] MAP HEIGHT EXCEEDS THE MAXIMUM ALLOWED\n");
+void	read_lines_into_map(int fd, char **map)
+{
+	char	*store_line;
+	size_t	len;
+	int		i;
+
+	i = 0;
+	store_line = get_next_line(fd);
+	while (store_line != NULL)
+	{
+		len = ft_strlen(store_line);
+		if (len > 0 && store_line[len - 1] == '\n')
+			store_line[len - 1] = '\0';
+		map[i] = store_line;
+		i++;
+		store_line = get_next_line(fd);
+	}
+	map[i] = NULL;
+}
