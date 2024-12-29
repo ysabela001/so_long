@@ -6,7 +6,7 @@
 /*   By: ytavares <ytavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 12:48:56 by ytavares          #+#    #+#             */
-/*   Updated: 2024/12/28 19:36:13 by ytavares         ###   ########.fr       */
+/*   Updated: 2024/12/29 14:19:34 by ytavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void	start_game(const char *path_to_map_file)
 	game.map = map;
 	if (!load_textures(&game))
 		return (cleanup_game(&game), (void)0);
-	render_map(&game);
-	mlx_key_hook(game.mlx, (mlx_keyfunc)keyboard_events, &game);
-	mlx_loop(game.mlx);
-	cleanup_game(&game);
-	free(map);
+	// render_map(&game);
+	// mlx_key_hook(game.mlx, (mlx_keyfunc)keyboard_events, &game);
+	// mlx_loop(game.mlx);
+	// cleanup_game(&game);
+	// free(map);
 }
 
 int	main(int argc, char **argv)
