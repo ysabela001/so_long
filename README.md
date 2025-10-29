@@ -3,14 +3,14 @@
 O so_long é um jogo 2D desenvolvido em C utilizando a MLX42, uma biblioteca gráfica moderna baseada em GLFW e OpenGL.
 O objetivo do jogo é guiar o personagem até a saída, coletando todos os itens no caminho e evitando obstáculos.
 
+---
 📍Objetivo do Projeto
 
 O projeto tem como propósito introduzir conceitos de programação gráfica, manipulação de eventos e renderização em tempo real.
 Além disso, reforça práticas de gerenciamento de memória, leitura de arquivos e organização modular em C.
+---
 
 ⚙️ Compilação e Execução
-
-🔧 Compilar o projeto
 
 Certifique-se de ter a MLX42 instalada e linkada corretamente.
 No terminal:
@@ -43,7 +43,7 @@ P	Posição inicial do jogador
 1000E1
 111111
 ```
-
+---
 🧠 Funcionalidades
 
 ✅ Leitura e validação de mapas .ber
@@ -59,7 +59,7 @@ P	Posição inicial do jogador
 ✅ Gerenciamento completo de memória (sem leaks)
 
 ✅ Tratamento robusto de erros
-
+---
 
 🗂️ Estrutura do Projeto
 ```
@@ -87,10 +87,9 @@ ESC	Fechar o jogo
 
 🧰 Tecnologias Utilizadas
 
-Tecnologia	Função
-C	Linguagem principal
-MLX42	Renderização gráfica e controle de eventos
-Makefile	Automação da compilação
+C	Linguagem principal;
+MLX42	Renderização gráfica e controle de eventos;
+Makefile	Automação da compilação;
 
 🧩 Como Rodar o Projeto
 
