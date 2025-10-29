@@ -93,6 +93,8 @@ C	Linguagem principal;
 MLX42	Renderização gráfica e controle de eventos;
 Makefile	Automação da compilação;
 
+---
+
 🧩 Como Rodar o Projeto
 
 Instale as dependências:
