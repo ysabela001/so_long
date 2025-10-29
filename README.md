@@ -8,6 +8,7 @@ O objetivo do jogo é guiar o personagem até a saída, coletando todos os itens
 
 O projeto tem como propósito introduzir conceitos de programação gráfica, manipulação de eventos e renderização em tempo real.
 Além disso, reforça práticas de gerenciamento de memória, leitura de arquivos e organização modular em C.
+
 ---
 
 ⚙️ Compilação e Execução
@@ -59,6 +60,7 @@ P	Posição inicial do jogador
 ✅ Gerenciamento completo de memória (sem leaks)
 
 ✅ Tratamento robusto de erros
+
 ---
 
 🗂️ Estrutura do Projeto
